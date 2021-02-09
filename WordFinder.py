@@ -30,7 +30,7 @@ class WordFinder:
     True
     """
 
-    def __init__(self, path):\
+    def __init__(self, path):
         self.path = path
         self.words = self.get_words_from_file()
         print(f"{self.num_of_words()} words read")
