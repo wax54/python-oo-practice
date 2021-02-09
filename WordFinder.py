@@ -6,6 +6,8 @@ class WordFinder:
     """
     instantiated with a path to a file on the disk that contains words,
     one per line
+    path: string
+        the path to a file containing one word per line
     
     >>> words = ['cat','','#hello','porcupine','dog']
     >>> wf = WordFinder("wordfinder_test_words.txt")
@@ -28,7 +30,7 @@ class WordFinder:
     True
     """
 
-    def __init__(self, path):
+    def __init__(self, path):\
         self.path = path
         self.words = self.get_words_from_file()
         print(f"{self.num_of_words()} words read")
@@ -62,8 +64,11 @@ class SpecialWordFinder(WordFinder):
     """
     instantiated with a path to a file on the disk that contains words,
     one per line
-    sometimes comments denoted with '#' as the first character in the line
-    and blank lines will be present, these will be ignored
+    comments denoted with '#' as the first character in the line
+    and blank lines will be ignored
+    
+    path: string
+        the path to a file containing one word per line
 
     >>> words = ['cat', 'porcupine', 'dog']
     >>> ignored = ['','#hello']
